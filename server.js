@@ -5,9 +5,6 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
 
 var arr={
   one:{
@@ -89,10 +86,12 @@ var htmlTemplate=`
 return htmlTemplate;
 }
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
 
-//navigate to one.html
-app.get('/:arrroute',function(req,res){
-    var arr1= req.pramas.arrroute;
+app.get('/:jk',function(req,res){
+    var arr1= req.pramas.jk;
     res.send(createTemplate(arr[arr1]));
 });
 
