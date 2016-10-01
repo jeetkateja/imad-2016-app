@@ -9,9 +9,62 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+  var  one={
+        webdetails:'Details:1',
+        webcontent:`
+        <h3> Paragraph about me</h3>
+        <p>var 
+            This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.
+        </p>
+        <p> 
+            This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.
+        </p>
+        <p> 
+            This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.
+        </p>`
+    };
+    
+
+
+function createTemplate(data)
+{
+var webcontent = data.webcontent;
+var webdetails = data.webdetails;
+var htmlTemplate=`
+    <html>
+    <head>
+        <title>My profile : Jeet Kateja </title>
+        <meta name="viewport" content="width-device-width, initial-scale=1">
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div>
+            <h1>This is about me:1</h1>
+        </div>
+    <hr>
+    <div>
+        <a href="/">Home</a><br>
+        <a href="/two">Two</a><br>
+        <a href="/three">Three</a>
+    </div>
+    <div>
+        <h2> ${webdetails}</h2>
+        <b>Name</b>: Jeet Kateja<br>
+        <b>Profession</b>: Software Engineer<br>
+        <b>Hobbies</b>:Coding    
+    </div>
+    <div>
+        ${webcontent}
+    </div>
+    </body>
+</html>`;
+return htmlTemplate;
+}
+
+
 //navigate to one.html
 app.get('/one',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'one.html'));
+    res.send(eateTemplate(one))
 });
 
 //navigate to two.html
