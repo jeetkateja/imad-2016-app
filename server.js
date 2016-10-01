@@ -93,6 +93,7 @@ return htmlTemplate;
 //navigate to one.html
 app.get('/:arrroute',function(req,res){
     var arrroute= req.pramas.arrroute;
+    alert(arrroute);
     res.send(createTemplate(arr[arrroute]));
 });
 
