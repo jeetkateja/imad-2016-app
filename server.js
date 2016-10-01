@@ -90,10 +90,6 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-//app.get('/:jk', function(req, res){
-//    var jk= req.pramas.jk;
-//    res.send(createTemplate(arr[jk]));
-//});
 
 app.get('/:approute',function(req,res){
     var jk1=req.params.approute;
