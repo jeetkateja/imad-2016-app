@@ -64,7 +64,7 @@ return htmlTemplate;
 
 //navigate to one.html
 app.get('/one',function(req,res){
-    res.send(eateTemplate(one))
+    res.send(createTemplate(one))
 });
 
 //navigate to two.html
