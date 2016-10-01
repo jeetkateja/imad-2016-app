@@ -15,12 +15,12 @@ app.get('/one',function(req,res){
 });
 
 //navigate to two.html
-app.get('/one',function(req,res){
+app.get('/two',function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'two.html'));
 });
 
 //navigate to three.html
-app.get('/one',function(req,res){
+app.get('/three',function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'three.html'));
 });
 
