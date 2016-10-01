@@ -9,7 +9,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-  var  one={
+var arr={
+  one:{
         webdetails:'Details:1',
         webcontent:`
         <h3> Paragraph about me</h3>
@@ -22,8 +23,35 @@ app.get('/', function (req, res) {
         <p> 
             This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.
         </p>`
-    };
-    
+    },
+  two:{
+        webdetails:'Details:2',
+        webcontent:`
+        <h3> Paragraph about me</h3>
+        <p>var 
+            This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.
+        </p>
+        <p> 
+            This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.
+        </p>
+        <p> 
+            Two
+        </p>`
+      
+  },
+  three:{
+        webdetails:'Details:3',
+        webcontent:`
+        <h3> Paragraph about me</h3>
+        <p>var 
+            This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.This is about me.
+        </p>
+        <p> 
+            Three
+        </p>`
+      
+  }
+};
 
 
 function createTemplate(data)
@@ -63,19 +91,11 @@ return htmlTemplate;
 
 
 //navigate to one.html
-app.get('/one',function(req,res){
-    res.send(createTemplate(one))
+app.get('/:arrroute',function(req,res){
+    var arrroute= req.pramas.arrroute;
+    res.send(createTemplate(arr[arrroute]));
 });
 
-//navigate to two.html
-app.get('/two',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'two.html'));
-});
-
-//navigate to three.html
-app.get('/three',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
